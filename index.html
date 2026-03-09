@@ -74,7 +74,7 @@
     display: flex; flex-direction: column; justify-content: space-between;
     animation: fadeUp 0.8s ease both;
   }
-  .hero-number { font-size: 11px; letter-spacing: 4px; color: var(--accent); }
+  .hero-number { font-size: 11px; letter-spacing: 4px; color: var(--black); }
   .hero-title {
     font-family: 'Rajdhani', sans-serif;
     font-size: clamp(52px, 6.5vw, 104px);
@@ -158,7 +158,9 @@
     .nav-links { gap: 24px; }
 
     .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-left { border-right: none; border-bottom: 3px solid var(--black); padding: 60px 32px; }
+    .hero-left { border-right: none; border-bottom: 3px solid var(--black); padding: 60px 32px; gap: 48px; }
+    .hero-number { margin-bottom: 16px; }
+    .hero-meta { margin-top: 16px; }
     .hero-right { grid-template-rows: auto auto; }
     .hero-right-top { padding: 48px 32px; min-height: 260px; }
     .hero-logo-wrap svg { width: 160px; height: 160px; }
@@ -175,7 +177,9 @@
     .nav-links { display: none; }
     .nav-wordmark { font-size: 18px; }
 
-    .hero-left { padding: 48px 24px; }
+    .hero-left { padding: 48px 24px; gap: 40px; }
+    .hero-number { margin-bottom: 12px; }
+    .hero-meta { margin-top: 12px; }
     .hero-right-top { padding: 40px 24px; min-height: 200px; }
     .hero-logo-wrap svg { width: 120px; height: 120px; }
     .hero-right-bottom { padding: 32px 24px; }
@@ -192,7 +196,10 @@
 <nav>
   <div class="nav-left">
     <a href="#" class="nav-logo">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" fill="none">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" height="32" style="width:auto;display:block;" fill="none">
+        <defs>
+          <style>@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400');</style>
+        </defs>
         <rect x="8" y="8" width="64" height="64" stroke="#0d0d0d" stroke-width="6"/>
         <g transform="rotate(-90, 40, 40)">
           <rect x="23.5" y="25" width="6" height="30" fill="#0d0d0d"/>
@@ -200,8 +207,8 @@
           <rect x="44.5" y="25" width="6" height="6" fill="#0d0d0d"/>
           <rect x="50.5" y="25" width="6" height="30" fill="#0d0d0d"/>
         </g>
+        <text x="88" y="69" font-family="Rajdhani, sans-serif" font-weight="400" font-size="90" letter-spacing="-1" fill="#0d0d0d">LAYER1</text>
       </svg>
-      <span class="nav-wordmark">Layer1</span>
     </a>
     <ul class="nav-links">
       <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -224,7 +231,7 @@
       <span class="t-orange" data-i18n="hero.title2">with understanding</span>
       <span class="t-accent" data-i18n="hero.title3">what's broken.</span>
     </div>
-    <p class="hero-meta" data-i18n-html="hero.meta">NIJMEGEN · NETHERLANDS<br>BUSINESS &amp; INFORMATION ANALYSIS<br>LAYER1 CONSULTANCY BV</p>
+    <p class="hero-meta" data-i18n-html="hero.meta">BUSINESS &amp; INFORMATION ANALYSIS<br>LAYER1 CONSULTANCY BV<br>NIJMEGEN · NETHERLANDS</p>
   </div>
   <div class="hero-right">
     <div class="hero-right-top">
@@ -241,7 +248,7 @@
       </div>
     </div>
     <div class="hero-right-bottom">
-      <p class="hero-desc" data-i18n="hero.desc">I translate complex client challenges into clear, workable solutions — with a strong focus on quality, UX, and the connection between stakeholders and IT teams.</p>
+      <p class="hero-desc" data-i18n="hero.desc">Translating complex business challenges into clear, workable solutions — with a strong focus on quality and customer satisfaction.</p>
       <a href="#contact" class="btn" data-i18n="hero.cta">Get in touch →</a>
     </div>
   </div>
@@ -268,11 +275,11 @@
   </div>
   <div class="footer-col">
     <p class="footer-label" data-i18n="footer.avail.label">Availability</p>
-    <p class="footer-content" data-i18n-html="footer.avail.body">Available for engagements<br>Freelance · Independent · Via BV<br>Finance · Insurance<br>Industry · Healthcare</p>
+    <p class="footer-content" data-i18n-html="footer.avail.body">Freelance · Independent · Via BV<br>Finance · Insurance<br>Industry · Healthcare</p>
   </div>
   <div class="footer-bottom">
     <span data-i18n="footer.copy">© 2026 LAYER1 CONSULTANCY BV — ALL RIGHTS RESERVED</span>
-    <span id="lang-indicator">EN</span>
+    <span id="lang-indicator" style="display:none">EN</span>
   </div>
 </footer>
 
@@ -284,16 +291,16 @@ const T = {
     "hero.title1": "Verandering begint",
     "hero.title2": "met begrijpen",
     "hero.title3": "wat er misgaat.",
-    "hero.meta": "NIJMEGEN · NEDERLAND<br>BUSINESS &amp; INFORMATIE ANALYSE<br>LAYER1 CONSULTANCY BV",
-    "hero.desc": "Ik vertaal complexe klantvragen naar heldere, werkbare oplossingen — met een sterke focus op kwaliteit, UX en de verbinding tussen stakeholders en IT-teams.",
+    "hero.meta": "BUSINESS &amp; INFORMATIE ANALYSE<br>LAYER1 CONSULTANCY BV<br>NIJMEGEN · NEDERLAND",
+    "hero.desc": "Complexe bedrijfsvraagstukken vertalen naar heldere, werkbare oplossingen — met een sterke focus op kwaliteit en klanttevredenheid.",
     "hero.cta": "Neem contact op →",
     "footer.loc.label": "Locatie",
     "footer.loc.body": "Nijmegen · Gelderland<br>Nederland<br>Op locatie &amp; remote",
     "footer.contact.label": "Contact",
     "footer.avail.label": "Beschikbaarheid",
-    "footer.avail.body": "Open voor opdrachten<br>Freelance · ZZP · Via BV<br>Finance · Insurance<br>Industry · Healthcare",
+    "footer.avail.body": "Freelance · ZZP · Via BV<br>Finance · Insurance<br>Industry · Healthcare",
     "footer.copy": "© 2026 LAYER1 CONSULTANCY BV — ALLE RECHTEN VOORBEHOUDEN",
-    "marquee": ["BUSINESS ANALYSE","INFORMATIE ANALYSE","STAKEHOLDER MANAGEMENT","API SPECIFICATIES","UI/UX","AGILE / SCRUM"]
+    "marquee": ["BUSINESS ANALYSE","INFORMATIE ANALYSE","STAKEHOLDER MANAGEMENT","API SPECIFICATIES","UI/UX FOCUSSED","19+ JAAR ERVARING IN IT CONSULTANCY"]
   },
   en: {
     "nav.contact": "Contact",
@@ -301,16 +308,16 @@ const T = {
     "hero.title1": "Change starts",
     "hero.title2": "with understanding",
     "hero.title3": "what's broken.",
-    "hero.meta": "NIJMEGEN · NETHERLANDS<br>BUSINESS &amp; INFORMATION ANALYSIS<br>LAYER1 CONSULTANCY BV",
-    "hero.desc": "I translate complex client challenges into clear, workable solutions — with a strong focus on quality, UX, and the connection between stakeholders and IT teams.",
+    "hero.meta": "BUSINESS &amp; INFORMATION ANALYSIS<br>LAYER1 CONSULTANCY BV<br>NIJMEGEN · NETHERLANDS",
+    "hero.desc": "Translating complex business challenges into clear, workable solutions — with a strong focus on quality and customer satisfaction.",
     "hero.cta": "Get in touch →",
     "footer.loc.label": "Location",
     "footer.loc.body": "Nijmegen · Gelderland<br>Netherlands<br>On-site &amp; remote",
     "footer.contact.label": "Contact",
     "footer.avail.label": "Availability",
-    "footer.avail.body": "Available for engagements<br>Freelance · Independent · Via BV<br>Finance · Insurance<br>Industry · Healthcare",
+    "footer.avail.body": "Freelance · Independent · Via BV<br>Finance · Insurance<br>Industry · Healthcare",
     "footer.copy": "© 2026 LAYER1 CONSULTANCY BV — ALL RIGHTS RESERVED",
-    "marquee": ["BUSINESS ANALYSIS","INFORMATION ANALYSIS","STAKEHOLDER MANAGEMENT","API SPECIFICATIONS","UI/UX","AGILE / SCRUM"]
+    "marquee": ["BUSINESS ANALYSIS","INFORMATION ANALYSIS","STAKEHOLDER MANAGEMENT","API SPECIFICATIONS","UI/UX FOCUSSED","19+ YEARS EXPERIENCE IN IT CONSULTANCY"]
   }
 };
 
