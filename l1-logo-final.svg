@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" width="2100" height="400" fill="none">
+  <defs>
+    <style>
+      @import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400');
+    </style>
+  </defs>
+
+  <!-- ═══ MARK (80×80 grid, frame 8→72) ═══ -->
+  <rect x="8" y="8" width="64" height="64" stroke="#0d0d0d" stroke-width="6"/>
+  <g transform="rotate(-90, 40, 40)">
+    <rect x="23.5" y="25" width="6" height="30" fill="#0d0d0d"/>
+    <rect x="23.5" y="49" width="20" height="6" fill="#0d0d0d"/>
+    <rect x="44.5" y="25" width="6" height="6" fill="#0d0d0d"/>
+    <rect x="50.5" y="25" width="6" height="30" fill="#0d0d0d"/>
+  </g>
+
+  <!--
+    Mark frame: y=8 (top) to y=72 (bottom), centre = y=40, height = 64px
+    Font size 90px. Rajdhani cap-height ratio ≈ 0.72 → cap = ~65px
+    To visually centre cap height in 64px frame:
+    baseline = frame_top + (frame_height + cap_height) / 2
+             = 8 + (64 + 65) / 2 = 8 + 64.5 ≈ 72.5
+    → y=72 sits cap flush with frame bounds
+  -->
+  <text
+    x="88"
+    y="69"
+    font-family="Rajdhani, sans-serif"
+    font-weight="400"
+    font-size="90"
+    letter-spacing="-1"
+    fill="#0d0d0d"
+  >LAYER1</text>
+
+</svg>
