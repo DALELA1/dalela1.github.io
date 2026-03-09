@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 80 80" width="400" height="400" fill="none">
+  <!-- Outer frame -->
+  <rect x="8" y="8" width="64" height="64" stroke="#0d0d0d" stroke-width="6"/>
+
+  <!-- L and 1 — centred, rotated -90° around centre (40,40) -->
+  <g transform="rotate(-90, 40, 40)">
+    <!-- L: vertical bar -->
+    <rect x="23.5" y="25" width="6" height="30" fill="#0d0d0d"/>
+    <!-- L: horizontal bar -->
+    <rect x="23.5" y="49" width="20" height="6" fill="#0d0d0d"/>
+    <!-- 1: serif -->
+    <rect x="44.5" y="25" width="6" height="6" fill="#0d0d0d"/>
+    <!-- 1: stem -->
+    <rect x="50.5" y="25" width="6" height="30" fill="#0d0d0d"/>
+  </g>
+</svg>
