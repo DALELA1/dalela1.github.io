@@ -77,12 +77,13 @@
   .hero-number { font-size: 11px; letter-spacing: 4px; color: var(--black); }
   .hero-title {
     font-family: 'Rajdhani', sans-serif;
-    font-size: clamp(52px, 6.5vw, 104px);
+    font-size: clamp(52px, 6.5vw, 80px);
     font-weight: 700; line-height: 0.92; letter-spacing: -2px;
   }
-  .hero-title .t-green  { display: block; color: var(--green); }
-  .hero-title .t-orange { display: block; color: var(--orange); }
-  .hero-title .t-accent { display: block; color: var(--accent); }
+  .hero-title .t-green  { display: block; color: var(--green);  opacity: 0; filter: blur(14px); animation: blurSharp 3.0s ease 2.0s forwards; }
+  .hero-title .t-orange { display: block; color: var(--orange); opacity: 0; filter: blur(14px); animation: blurSharp 3.0s ease 0.3s forwards; }
+  .hero-title .t-accent { display: block; color: var(--accent); opacity: 0; filter: blur(14px); animation: blurSharp 3.0s ease 1.15s forwards; }
+  @keyframes blurSharp { to { opacity: 1; filter: blur(0); } }
   .hero-meta { font-size: 11px; letter-spacing: 2px; line-height: 2.2; opacity: 0.5; }
 
   .hero-right { display: grid; grid-template-rows: 1fr 1fr; animation: fadeUp 0.8s ease 0.2s both; }
