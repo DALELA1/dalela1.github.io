@@ -3,8 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Layer1 Consultancy — Daniël Lekatompessy</title>
+<title>LAYER1 BV</title>
+<meta name="description" content="LAYER1 Consultancy BV — Business & Information Analysis. Translating complex business challenges into clear, workable solutions. Based in Nijmegen, Netherlands.">
+<meta property="og:title" content="LAYER1 Consultancy BV">
+<meta property="og:description" content="Business & Information Analysis. Translating complex business challenges into clear, workable solutions.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="en_NL">
+<meta name="twitter:card" content="summary">
 <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;600;700&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 80' fill='none'%3E%3Crect x='8' y='8' width='64' height='64' stroke='%230d0d0d' stroke-width='6'/%3E%3Cg transform='rotate(-90, 40, 40)'%3E%3Crect x='23.5' y='25' width='6' height='30' fill='%230d0d0d'/%3E%3Crect x='23.5' y='49' width='20' height='6' fill='%230d0d0d'/%3E%3Crect x='44.5' y='25' width='6' height='6' fill='%230d0d0d'/%3E%3Crect x='50.5' y='25' width='6' height='30' fill='%230d0d0d'/%3E%3C/g%3E%3C/svg%3E">
 <style>
   *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
   :root {
@@ -198,9 +205,6 @@
   <div class="nav-left">
     <a href="#" class="nav-logo">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 80" height="32" style="width:auto;display:block;" fill="none">
-        <defs>
-          <style>@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@400');</style>
-        </defs>
         <rect x="8" y="8" width="64" height="64" stroke="#0d0d0d" stroke-width="6"/>
         <g transform="rotate(-90, 40, 40)">
           <rect x="23.5" y="25" width="6" height="30" fill="#0d0d0d"/>
@@ -213,13 +217,13 @@
     </a>
     <ul class="nav-links">
       <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
-      <li><a href="https://www.linkedin.com/in/dlekatompessy/" target="_blank">LinkedIn</a></li>
+      <li><a href="https://www.linkedin.com/in/dlekatompessy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">LinkedIn</a></li>
     </ul>
   </div>
   <div class="lang-switcher">
-    <button class="lang-btn active" data-lang="en">EN</button>
+    <button class="lang-btn active" data-lang="en" aria-pressed="true">EN</button>
     <div class="lang-divider"></div>
-    <button class="lang-btn" data-lang="nl">NL</button>
+    <button class="lang-btn" data-lang="nl" aria-pressed="false">NL</button>
   </div>
 </nav>
 
@@ -250,7 +254,7 @@
     </div>
     <div class="hero-right-bottom">
       <p class="hero-desc" data-i18n="hero.desc">Translating complex business challenges into clear, workable solutions — with a strong focus on quality and customer satisfaction.</p>
-      <a href="#contact" class="btn" data-i18n="hero.cta">Get in touch →</a>
+      <a href="#contact" class="btn" data-i18n="hero.cta" aria-label="Get in touch">Get in touch →</a>
     </div>
   </div>
 </section>
@@ -269,7 +273,7 @@
   <div class="footer-col">
     <p class="footer-label" data-i18n="footer.contact.label">Contact</p>
     <p class="footer-content">
-      <a href="https://www.linkedin.com/in/dlekatompessy/" target="_blank">LinkedIn →</a><br>
+      <a href="https://www.linkedin.com/in/dlekatompessy/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn (opens in new tab)">LinkedIn →</a><br>
       Layer1 Consultancy BV<br>
       Arnhem-Nijmegen Regio
     </p>
@@ -280,7 +284,6 @@
   </div>
   <div class="footer-bottom">
     <span data-i18n="footer.copy">© 2026 LAYER1 CONSULTANCY BV — ALL RIGHTS RESERVED</span>
-    <span id="lang-indicator" style="display:none">EN</span>
   </div>
 </footer>
 
@@ -344,7 +347,6 @@ function applyLang(l) {
     });
     buildMarquee(l);
     document.documentElement.lang = l;
-    document.getElementById('lang-indicator').textContent = l.toUpperCase();
     all.forEach(el => el.classList.remove('lang-fade'));
   }, 150);
 }
@@ -354,13 +356,13 @@ document.querySelectorAll('.lang-btn').forEach(btn => {
     const l = btn.dataset.lang;
     if (l === lang) return;
     lang = l;
-    document.querySelectorAll('.lang-btn').forEach(b => b.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(b => { b.classList.remove('active'); b.setAttribute('aria-pressed', 'false'); });
     btn.classList.add('active');
+    btn.setAttribute('aria-pressed', 'true');
     applyLang(l);
   });
 });
 
-buildMarquee('en');
 applyLang('en');
 </script>
 </body>
